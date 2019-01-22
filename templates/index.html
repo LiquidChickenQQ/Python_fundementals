@@ -1,7 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="tuf-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content=""IE="edge">
+    <meta name="viewport" content=""width="device-width, initial-scale=1">
+    <meta name="description" content="PyStudentManager app - Make Your Students Love You!">
+    <meta name="author" content="From Students to Students">
+    <title>Student Manager</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
+    <script src="https://oss.maxcdn.comhtml5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <style>
+    body {
+        padding-top: 70px
+    }
+    footer {
+        margin-top: 50px;
+        padding-top: 20px;
+        padding-bottom: 10px;
+        background-color: #f5f5f5;
+        }
+       .text-muted {
+        color: #777:
+        }
+
+    </style>
 </head>
+
+<body>
+
+<div class="container">
+
+    <div class="jumbotron">
+        <h1>PyStudentManager</h1>
+        <p>This app will allow you to view all the enrolled students and detailed information
+        student ID and their first and last name. You can also add students</p>
+
+    </div>
+    <div class="page-header">
+        <h1>All Students</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-striped">
+                <thread>
+                    <tbody>
+                    <tr>
+                        <th>Student ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Actions</th>
+                    </tr>
+                </thread>
+                    <tbody>
+                    {% for student in students %}
+                    <tr>
+                        <td>{{ student.students_id }}</td>
+                        <td>{{ student.name }}</td>
+                        <td>{{ student.last_name }}</td>
+                            <button class="btn btn-primary btn-sm">Edit</button>
+                            <button class="btn btn-danger btn-sm">Delete</button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+            </table>
+            <br>
+            <br>
+            <br>
+            <form>
+                 <div class="StudentForm">
+                     <input type="form" class="form-control" id="student_id" aria-describedby="emailHelp" placeholder="Student ID">
+                  </div>
+                <br>
+                 <div class="StudentForm">
+                     <input type="form" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Student First Name">
+                  </div>
+                <br>
+                 <div class="StudentForm">
+                     <input type="form" class="form-control" id="last_name" aria-describedby="emailHelp" placeholder="Student Last Name">
+                  </div>
+                <br>
+                <button action="/" method="post" type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+</body>
 </html>
